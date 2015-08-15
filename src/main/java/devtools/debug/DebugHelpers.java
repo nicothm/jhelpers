@@ -52,6 +52,20 @@ public final class DebugHelpers {
         }
     }
 
+    public static void fieldsAreFinal(Object othis) {
+        final Class<?> clazz = othis.getClass();
+        final Field[] fields = clazz.getDeclaredFields();
+        AccessibleObject.setAccessible(fields, true);
+
+        for(Field f : fields) {
+            int modifier = f.getModifiers();
+            if(!Modifier.isFinal(modifier)) {
+                System.out.println(WARNING+clazz.getCanonicalName()+" - Field "+f.getName()+" is not final!");
+            }
+
+        }
+    }
+
     public static void fieldsArePrivate(Object othis) {
         final Class<?> clazz = othis.getClass();
         final Field[] fields = clazz.getDeclaredFields();

@@ -77,6 +77,12 @@ public class DebugHelpersTest {
     }
 
     @Test
+    public void fieldsFinalTest() {
+        Person p1 = new Person("Hans", "Nick");
+        DebugHelpers.fieldsAreFinal(p1);
+    }
+
+    @Test
     public void fieldsPrivateTest() {
         SimpleClass sc = new SimpleClass();
         DebugHelpers.fieldsArePrivate(sc);
@@ -106,7 +112,7 @@ public class DebugHelpersTest {
 
     private class Person {
         private final String name;
-        private final String surname;
+        private String surname;
 
         public Person(String n, String s) {
             name = n;
