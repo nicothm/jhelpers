@@ -22,7 +22,6 @@ public class FxTest extends AbstractFxApp {
         mainContainer.getChildren().addAll(new Label("Test label1"), new Label("Test label2"));
     }
 
-
     public static void main(String args[]) {
         Application.launch(args);
     }

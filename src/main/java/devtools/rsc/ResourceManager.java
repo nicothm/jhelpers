@@ -1,8 +1,11 @@
 package devtools.rsc;
 
+import devtools.debug.NullHelpers;
+
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.FileSystems;
+import java.util.Optional;
 
 /**A Resource-manager which takes a root-directory for all resources. (e.g: ./rsc; ./resources)
  * This is useful for loading files from this directory.
@@ -15,6 +18,7 @@ public class ResourceManager {
 
     /**
      * Creates a new manager with the given path as root-path.
+     *
      * @param rootpath the root-directory of the rsc-pathes.
      */
     public ResourceManager(String rootpath) {
@@ -24,6 +28,7 @@ public class ResourceManager {
     /**
      * Returns a new resource from the given subpath, concatenated with the rootpath.
      * E.g.: /home/nick/resources, where /home/nick is root and resources the subpath.
+     *
      * @param subpath the path witihn the rootpath of this manager
      * @return a new URL to the resource or null if the resource doesn't exist
      */
@@ -32,17 +37,41 @@ public class ResourceManager {
     }
 
     /**
+     * Returns an optional resource from the given subpath, concatenated with the rootpath.
+     *
+     * @see ResourceManager#getRsc(String)
+     * @param subpath the path witihn the rootpath of this manager
+     * @return an optional containing the url to the resource
+     */
+     public Optional<URL> getRscOptional(String subpath) {
+       return NullHelpers.nullToOptional(() -> getRsc(subpath));
+    }
+
+    /**
      * Returns a new inputstream from the given subpath, concatenated with the rootpath.
      * E.g.: /home/nick/resources, where /home/nick is root and resources the subpath.
+     *
      * @param subpath the path witihn the rootpath of this manager
-     * @return a new INputStream from the resource
+     * @return a new InputStream from the resource
      */
     public InputStream getRscAsStream(String subpath) {
-        return getClass().getResourceAsStream(root+fileSeparator+subpath);
+        return getClass().getResourceAsStream(root + fileSeparator + subpath);
+    }
+
+    /**
+     * Returns an optional inputstream from the given subpath, concatenated with the rootpath.
+     *
+     * @see ResourceManager#getRscAsStream(String)
+     * @param subpath the path witihn the rootpath of this manager
+     * @return an optional InputStream from the resource
+     */
+    public Optional<InputStream> getRscStreamOptional(String subpath) {
+        return NullHelpers.nullToOptional(() -> getRscAsStream(subpath));
     }
 
     /**
      * Tests if the given resource in this root + the subpath exists.
+     *
      * @param subpath the subpath from this root directory
      * @return true if the resource exists, false otherwise
      */
@@ -52,6 +81,7 @@ public class ResourceManager {
 
     /**
      * Returns the root-directory.
+     *
      * @return the roo directory as string
      */
     public String getRoot() {
