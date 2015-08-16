@@ -25,7 +25,7 @@ public class ResourceManager {
      * Returns a new resource from the given subpath, concatenated with the rootpath.
      * E.g.: /home/nick/resources, where /home/nick is root and resources the subpath.
      * @param subpath the path witihn the rootpath of this manager
-     * @return a new URL to the resource
+     * @return a new URL to the resource or null if the resource doesn't exist
      */
     public URL getRsc(String subpath) {
         return getClass().getResource(root+fileSeparator+subpath);
@@ -39,6 +39,15 @@ public class ResourceManager {
      */
     public InputStream getRscAsStream(String subpath) {
         return getClass().getResourceAsStream(root+fileSeparator+subpath);
+    }
+
+    /**
+     * Tests if the given resource in this root + the subpath exists.
+     * @param subpath the subpath from this root directory
+     * @return true if the resource exists, false otherwise
+     */
+    public boolean rscExists(String subpath) {
+        return getRsc(subpath) != null;
     }
 
     /**
