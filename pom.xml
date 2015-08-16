@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>groupId</groupId>
-    <artifactId>DevTools</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <groupId>de.thm.nj.jdevt</groupId>
+    <artifactId>JDevTools</artifactId>
+    <version>0.3-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
