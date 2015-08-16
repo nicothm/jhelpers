@@ -1,8 +1,6 @@
 package devtools.gui;
 
 import javafx.application.Application;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -24,6 +22,14 @@ public abstract class AbstractFxApp extends Application {
         stage.show();
     }
 
-    public abstract Scene createMainScene();
-    public abstract void addComponents();
+    /**
+     * This method returns the main scene of the application.
+     * @return a scene that's bind to the primary-stage.
+     */
+    protected abstract Scene createMainScene();
+
+    /**
+     * This method adds all components to the main-container.
+     */
+    protected abstract void addComponents();
 }
