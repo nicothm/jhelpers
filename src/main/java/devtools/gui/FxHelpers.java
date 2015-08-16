@@ -1,4 +1,4 @@
-package main.java.devtools.gui;
+package devtools.gui;
 
 import javafx.application.Platform;
 
