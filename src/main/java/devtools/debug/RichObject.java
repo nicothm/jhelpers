@@ -6,37 +6,63 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /**
- * Created by nico on 15.08.15.
+ * Helper with magic toString(), hashCode() and equals() methods.<br/>
+ * Simply call all the functions with the objects-reference and viola: there is a usefull implementation.
+ * <br/><br/>Created by nico on 15.08.15.
  */
 public final class RichObject {
     private static final Comparator<Field> sortByName = (a,b) -> a.getName().compareTo(b.getName());
 
     private RichObject() { }
 
+    /**
+     * An generic implementation of {@link Object#toString()}. <br/>
+     * This method walks over all fields of object o and wrights them together with the field's name into the resulting string.
+     *
+     * @param o the object for which the toString should be created, normally this
+     * @return a usefull string-representation of o
+     */
     public static String toString(Object o) {
-        final Class<?> clazz = o.getClass();
-        final StringBuilder sb = new StringBuilder("[ ");
-        final Field[] fields = clazz.getDeclaredFields();
-        //sort by name
-        Arrays.sort(fields, sortByName );
-        AccessibleObject.setAccessible(fields, true);
+        if(o == null) return "Null-Reference";
+        else {
+            final Class<?> clazz = o.getClass();
+            final StringBuilder sb = new StringBuilder("[ ");
+            final Field[] fields = clazz.getDeclaredFields();
+            //sort by name
+            Arrays.sort(fields, sortByName );
+            AccessibleObject.setAccessible(fields, true);
 
-        for(Field f : fields) {
-            try {
-                sb.append(f.getName() + ":" + f.get(o) + " ");
-            } catch(IllegalAccessException e) {
-                sb.append(f.getName() + ": notReadable" +" ");
+            for(Field f : fields) {
+                try {
+                    sb.append(f.getName() + ":" + f.get(o) + " ");
+                } catch(IllegalAccessException e) {
+                    sb.append(f.getName() + ": notReadable" +" ");
+                }
             }
-        }
 
-        sb.append("]");
-        return sb.toString();
+            sb.append("]");
+            return sb.toString();
+        }
     }
 
+    /**
+     * Creates a hashCode for the given object o.<br/>
+     * It's an implementation for {@link Object#hashCode()}.
+     *
+     * @param o the object for which an hashCode should be calculated, normally this
+     * @return an hashCode from o, based on the string-representation of o
+     */
     public static int hashCode(Object o) {
         return o.toString().hashCode();
     }
 
+    /**
+     * An generic implementation of {@link java.lang.Object#equals(Object)}.
+     *
+     * @param oThis the object for which equals should be executed, normally this
+     * @param other the other object which should be checked against oThis (equals's obj)
+     * @return true if oThis and other are "equals" based on their fields, false otherwise
+     */
     public static boolean equals(Object oThis, Object other) {
         if(other == oThis) return true; //same?
         else if(oThis == null) return false; //this-ref null?

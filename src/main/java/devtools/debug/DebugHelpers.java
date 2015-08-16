@@ -5,7 +5,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 /**
- * Helper for debugging a class and for avoiding common problems with null-references, not initialzed values, non-final values etc.
+ * Helper for debugging a class and for avoiding common problems with null-references, not initialized values, non-final values etc.
  * <br/><br/>Created by nico on 15.08.15.
  */
 public final class DebugHelpers {
