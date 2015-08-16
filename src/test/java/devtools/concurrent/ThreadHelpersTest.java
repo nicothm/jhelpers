@@ -41,8 +41,8 @@ public class ThreadHelpersTest {
             throw new IllegalArgumentException("haha exception!");
         };
 
-        pool.submit(exceptionSaveRunnable(throwsException));
+//        pool.submit(exceptionSaveRunnable(throwsException));
 
-        Thread.sleep(100);
+//        Thread.sleep(100);
     }
 }
