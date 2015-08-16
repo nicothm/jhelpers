@@ -4,6 +4,11 @@ import org.junit.Test;
 
 import static devtools.concurrent.ThreadHelpers.*;
 import org.junit.Test;
+
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 import static org.junit.Assert.*;
 
 /**
@@ -26,5 +31,18 @@ public class ThreadHelpersTest {
 
         asThread(r).start();
         Thread.sleep(10);
+    }
+
+    @Test
+    public void threadSafeRunnableTest() throws InterruptedException {
+        ExecutorService pool = Executors.newFixedThreadPool(1);
+        Runnable throwsException = () -> {
+            System.out.println("extra thread with throwable.");
+            throw new IllegalArgumentException("haha exception!");
+        };
+
+        pool.submit(exceptionSaveRunnable(throwsException));
+
+        Thread.sleep(100);
     }
 }
