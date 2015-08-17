@@ -1,4 +1,4 @@
-# JDevTools
+# JHelpers
 This project tries to combine common functions for java-programmers and avoiding common problems in the java world.
 
 Have you ever think about a world where you can simply implement equals(), hashCode() and toString() by calling a method, than this project will make your life much easier.
