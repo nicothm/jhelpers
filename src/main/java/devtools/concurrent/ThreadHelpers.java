@@ -3,7 +3,7 @@ package devtools.concurrent;
 /**
  * Helpers for working with concurrency, threads, runnables & callables.
  *
- * <br/><br/>Created by nico on 15.08.15.
+ * <P>Created by nico on 15.08.15.</P>
  */
 public final class ThreadHelpers {
     private ThreadHelpers() {}
@@ -20,9 +20,9 @@ public final class ThreadHelpers {
 
     /**
      * Returns a runnable that runs the given runnable,
-     * except that it explicitly prints-out a stacktrace and exits the program, if an exception is thrown. <br/>
+     * except that it explicitly prints-out a stacktrace and exits the program, if an exception is thrown.
      *
-     * This can be useful when working with threadpools, which normally hides exceptions.
+     * <P>This can be useful when working with threadpools, which normally hides exceptions.</P>
      *
      * @param r the runnable that could throw an exception
      * @return a new runnable which prints out the stacktrace of the thrown exception

@@ -13,7 +13,7 @@ import java.util.Optional;
 
 /**Holds functions for creating simple javafx-dialogs.
  *
- * <br/><br/>Created by nico on 17.08.15.
+ * <P>Created by nico on 17.08.15.</P>
  */
 public final class FxDialogs {
     private FxDialogs() { }

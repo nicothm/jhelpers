@@ -6,7 +6,7 @@ import java.util.function.Supplier;
 
 /** Contains methods for handling null-pointers.
  *
- * <br/><br/>Created by nico on 16.08.15.
+ * <P>Created by nico on 16.08.15.</P>
  */
 public final class NullHelpers {
     private NullHelpers() { }
@@ -41,7 +41,7 @@ public final class NullHelpers {
     /**
      * Turns the result of the given function into an optional for handling eventually given null-references.
      *
-     * <br/>This can be handy if a function returns eventually a null-reference.
+     * <P>This can be handy if a function returns eventually a null-reference.</P>
      *
      * @param f the supplier that could return a null-reference
      * @param <A> the type of the result from f

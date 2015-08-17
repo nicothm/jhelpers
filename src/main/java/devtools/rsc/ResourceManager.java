@@ -7,10 +7,16 @@ import java.net.URL;
 import java.nio.file.FileSystems;
 import java.util.Optional;
 
-/**A Resource-manager which takes a root-directory for all resources. (e.g: ./rsc; ./resources)
- * This is useful for loading files from this directory.
+/**
+ * A Resource-manager which takes a root-directory for all resources, like:
+ * <UL>
+ *     <LI>rsc</LI>
+ *     <LI>resources</LI>
+ *     <LI>assets</LI>
+ * </UL>
+ * <P>This is useful for loading files from this directory.</P>
  *
- * Created by nico on 16.08.15.
+ * <P>Created by nico on 16.08.15.</P>
  */
 public class ResourceManager {
     private final String root;

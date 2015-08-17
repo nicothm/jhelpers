@@ -4,10 +4,10 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**Abstract class for creating JavaFx-Applications. <br/>
+/**Abstract class for creating JavaFx-Applications.
  *
- * This class overrides the start method and calls createMainScene(), addComponents().
- * <br/><br/>Created by nico on 16.08.15.
+ * <P>This class overrides the start method and calls createMainScene(), addComponents().</P>
+ * <P>Created by nico on 16.08.15.</P>
  */
 public abstract class AbstractFxApp extends Application {
     protected Stage stage; //initialized through start()

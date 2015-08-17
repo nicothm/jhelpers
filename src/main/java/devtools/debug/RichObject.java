@@ -6,9 +6,9 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /**
- * Helper with magic toString(), hashCode() and equals() methods.<br/>
- * Simply call all the functions with the objects-reference and viola: there is a usefull implementation.
- * <br/><br/>Created by nico on 15.08.15.
+ * Helper with magic toString(), hashCode() and equals() methods.
+ * <P>Simply call all the functions with the objects-reference and viola: there is a usefull implementation.</P>
+ * <P>Created by nico on 15.08.15.</P>
  */
 public final class RichObject {
     private static final Comparator<Field> sortByName = (a,b) -> a.getName().compareTo(b.getName());
@@ -16,8 +16,8 @@ public final class RichObject {
     private RichObject() { }
 
     /**
-     * An generic implementation of {@link Object#toString()}. <br/>
-     * This method walks over all fields of object o and wrights them together with the field's name into the resulting string.
+     * An generic implementation of {@link Object#toString()}.
+     * <P>This method walks over all fields of object o and wrights them together with the field's name into the resulting string.</P>
      *
      * @param o the object for which the toString should be created, normally this
      * @return a usefull string-representation of o
@@ -46,8 +46,8 @@ public final class RichObject {
     }
 
     /**
-     * Creates a hashCode for the given object o.<br/>
-     * It's an implementation for {@link Object#hashCode()}.
+     * Creates a hashCode for the given object o.
+     * <P>It's an implementation for {@link Object#hashCode()}.</P>
      *
      * @param o the object for which an hashCode should be calculated, normally this
      * @return an hashCode from o, based on the string-representation of o

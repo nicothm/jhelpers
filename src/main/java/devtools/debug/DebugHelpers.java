@@ -6,7 +6,7 @@ import java.lang.reflect.Modifier;
 
 /**
  * Helper for debugging a class and for avoiding common problems with null-references, not initialized values, non-final values etc.
- * <br/><br/>Created by nico on 15.08.15.
+ * <P>Created by nico on 15.08.15.</P>
  */
 public final class DebugHelpers {
     private static final String WARNING = "[ WARNING ]: ";
@@ -67,10 +67,10 @@ public final class DebugHelpers {
     }
 
     /**
-     * Throws an MissingImplementationException() to indicate that an implementation is missing.<br/>
-     * This can be useful when implementing an interface method-for-method.
+     * Throws an MissingImplementationException() to indicate that an implementation is missing.
+     * <P>This can be useful when implementing an interface method-for-method.
      * All not-implemented methods of the interface calls this function and throws an exception,
-     * so all callers of the function knows that this method is missing.
+     * so all callers of the function knows that this method is missing.</P>
      *
      * @throws MissingImplementationException everytime
      */
@@ -80,9 +80,9 @@ public final class DebugHelpers {
 
     /**
      * Throws an MissingImplementationException() with the given message to indicate that an implementation is missing.<br/>
-     * This can be useful when implementing an interface method-for-method.
+     * <P>This can be useful when implementing an interface method-for-method.
      * All not-implemented methods of the interface calls this function and throws an exception,
-     * so all callers of the function knows that this method is missing.
+     * so all callers of the function knows that this method is missing.</P>
      *
      * @param msg the message for the exception
      * @throws MissingImplementationException everytime
@@ -92,12 +92,12 @@ public final class DebugHelpers {
     }
 
     /**
-     * Tests that <B>all fields</B> of the given object <B>aren't null.</B><br/>
+     * Tests that <B>all fields</B> of the given object <B>aren't null.</B>
      *
-     * This method is useful when debugging a not-running systems or to check
-     * that every field of the object is initialized with "good" references. <br/><br/>
+     * <P>This method is useful when debugging a not-running systems or to check
+     * that every field of the object is initialized with "good" references. </P>
      *
-     * Normally this method is called with <B>this</B> as argument.
+     * <P>Normally this method is called with <B>this</B> as argument.</P>
      *
      * @see DebugHelpers#fieldsAreFinal(Object)
      * @see DebugHelpers#fieldsArePrivate(Object)
@@ -119,12 +119,12 @@ public final class DebugHelpers {
     }
 
     /**
-     * Tests that <B>all fields</B> of the given object <B>are final.</B><br/>
+     * Tests that <B>all fields</B> of the given object <B>are final.</B>
      *
-     * This method is useful when debugging a not-running systems or to check
-     * that every field of the object is final. <br/><br/>
+     * <P>This method is useful when debugging a not-running systems or to check
+     * that every field of the object is final. </P>
      *
-     * Normally this method is called with <B>this</B> as argument.
+     * <P>Normally this method is called with <B>this</B> as argument.</P>
      *
      * @see DebugHelpers#fieldsArePrivate(Object)
      * @see DebugHelpers#fieldsNotNull(Object)
@@ -145,12 +145,12 @@ public final class DebugHelpers {
     }
 
     /**
-     * Tests that <B>all fields</B> of the given object <B>are private.</B><br/>
+     * Tests that <B>all fields</B> of the given object <B>are private.</B>
      *
-     * This method is useful when debugging a not-running systems or to check
-     * that every field of the object is private. <br/><br/>
+     * <P>This method is useful when debugging a not-running systems or to check
+     * that every field of the object is private. </P>
      *
-     * Normally this method is called with <B>this</B> as argument.
+     * <P>Normally this method is called with <B>this</B> as argument.</P>
      *
      * @see DebugHelpers#fieldsAreFinal(Object)
      * @see DebugHelpers#fieldsNotNull(Object)

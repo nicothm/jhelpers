@@ -8,7 +8,7 @@ import static devtools.debug.DebugHelpers.*;
 /**
  * Helper for common mathematical problems.
  *
- * <br/><br/>Created by nico on 16.08.15.
+ * <P>Created by nico on 16.08.15.</P>
  */
 public final class MathHelper {
     private static Random rnd = new Random();
