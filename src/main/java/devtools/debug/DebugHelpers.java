@@ -79,7 +79,7 @@ public final class DebugHelpers {
     }
 
     /**
-     * Throws an MissingImplementationException() with the given message to indicate that an implementation is missing.<br/>
+     * Throws an MissingImplementationException() with the given message to indicate that an implementation is missing.
      * <P>This can be useful when implementing an interface method-for-method.
      * All not-implemented methods of the interface calls this function and throws an exception,
      * so all callers of the function knows that this method is missing.</P>
