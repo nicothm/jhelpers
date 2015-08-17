@@ -4,7 +4,7 @@ This project tries to combine common functions for java-programmers and avoiding
 Have you ever think about a world where you can simply implement equals(), hashCode() and toString() by calling a method, than this project will make your life much easier.
 With this project you can do this:
 
-```code
+```java
 public String toString() {
     return RichObject.toString(this);
 }
@@ -17,9 +17,10 @@ public boolean equals(Object other) {
 ```
 
 Or for checking if a requirement is fulfilled, simply use this:
-```code
+```java
 public void yourFunction(int value) {
     DebugHelpers.require(value>0, "Value has to be >0!");
+}
 ```
 
 If you like to check it out, simply build it with maven or sbt.
