@@ -1,7 +1,7 @@
 HEADER_FILE="header.txt" #where is the header?
 INCLUDE=["../src"] #to which files/directorys should be added?
 EXCLUDE=["resources"] #which files/directorys should be ignored?
-UPDATE_LICENSE=True #remove old header?
+UPDATE_HEADER=True #remove old header?
 
 #which comment characters should be used?
 START_COMMENT="/**" #first line of comment
@@ -18,7 +18,7 @@ def writeHeader(header, filePath):
     with open(filePath, "w") as f:
         content = original
 
-        if UPDATE_LICENSE:
+        if UPDATE_HEADER:
             content = itertools.dropwhile(
                         lambda x: x.startswith(START_COMMENT) or
                                 x.startswith(LINE_COMMENT) or
