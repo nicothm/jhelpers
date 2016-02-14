@@ -1,7 +1,8 @@
 # JHelpers
-This project tries to combine common functions for java-programmers and avoiding common problems in the java world.
+This project combines common functions for java-programmers and helpers for avoiding common problems in the java world like unexpected null-references or not-readable string-representation of objects.
 
-Have you ever think about a world where you can simply implement equals(), hashCode() and toString() by calling a method, than this project will make your life much easier.
+Are you tired of implementing equals(), hashCode() and toString()? You don't have to!
+
 With this project you can do this:
 
 ```java
@@ -19,20 +20,17 @@ public boolean equals(Object other) {
 Or for checking if a requirement is fulfilled, simply use this:
 ```java
 public void yourFunction(int value) {
-    DebugHelpers.require(value>0, "Value has to be >0!");
+    DebugHelpers.require(value>0, "Value has to be > 0!");
 }
 ```
 
-If you like to check it out, simply build it with maven or sbt.
+# Other stuff
+Currently we have a cool script in tools/ for adding/updating a custom header to all files in the given directorys.
 
-In the console use either:
+If you like to check it out, simply build it with maven:
+
 ```sh
 $: mvn clean install
 ```
-or:
-```sh
-$: sbt compile
-```
 
 and add it to your projects dependencies.
-
